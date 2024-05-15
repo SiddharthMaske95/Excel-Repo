@@ -1,0 +1,13 @@
+package com.myspace.insurancepolicyrulestoringresponse;
+
+import java.lang.Number;
+
+rule "Pincode Fail"
+	dialect "mvel"
+	when
+		$T : Insurance( pincode == "Error" )
+	then
+		modify( $T ) {
+				setStatusPincode( "Fail" )
+		}
+end

@@ -1,0 +1,13 @@
+package com.myspace.insurancepolicyrulestoringresponse;
+
+import java.lang.Number;
+
+rule "Pincode pass"
+	dialect "mvel"
+	when
+		$T : Insurance( pincode == "Success" )
+	then
+		modify( $T ) {
+				setStatusPincode( "Pass" )
+		}
+end
